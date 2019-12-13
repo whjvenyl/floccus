@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>floccus</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Comfortaa', sans-serif;
+        line-height: 1.5;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      .container {
+        color: #1a435c;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #3893cc;
+      }
+      .container > * {
+        max-width: 800px;
+        margin: auto;
+        padding: 15px;
+      }
+      .header {
+        box-sizing: border-box;
+        padding: 25px;
+        padding-left: 130px;
+        background-repeat: no-repeat;
+        background-image: url('https://raw.githubusercontent.com/marcelklehr/floccus/develop/icons/logo_128.png');
+        color: #3893cc;
+      }
+      .header h1,
+      .header p {
+        margin: 0;
+      }
+      .text {
+        padding: 10px 0;
+      }
+      .description {
+        box-sizing: border-box;
+        padding-left: 450px;
+        min-height: 350px;
+        font-size: 1.2em;
+        background-repeat: no-repeat;
+        background-image: url('./img/undraw_devices.svg');
+        background-size: 440px;
+        background-position: -10px 20px;
+      }
+      .screenshot {
+        min-height: 400px;
+        background-repeat: no-repeat;
+        background-image: url('https://raw.githubusercontent.com/marcelklehr/floccus/develop/img/screen_chrome_account.png');
+        background-size: 1000px;
+        background-position: center top;
+        background-color: #235d81;
+        box-shadow: #000 0 0 15px inset;
+      }
+      .footer {
+      }
+      .bg-blue {
+        background-color: #eaf2f7;
+      }
+    </style>
+  </head>
+  <div class="container">
+    <div class="header">
+      <h1>floccus</h1>
+      <p>
+        Sync your bookmarks across browsers via a self-hosted server
+      </p>
+    </div>
+  </div>
+  <div class="container bg-blue">
+    <div class="text description bg-devices">
+      <p>
+        floccus is a browser extension for Firefox and Chrome-based browsers
+        which allows you to synchronize your bookmarks across browsers and
+        devices via a self-hosted server of your choosing. Full control, full
+        privacy, full access to your favorite experiences on the web.
+      </p>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/floccus/"
+        ><img
+          src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_2.png"
+          alt="floccus on Mozilla addons"
+      /></a>
+      <a
+        href="https://chrome.google.com/webstore/detail/floccus/fnaicdffflnofjppbagibeoednhnbjhg"
+        ><img
+          src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png"
+          alt="floccus on Chrome Webstore"
+      /></a>
+    </div>
+  </div>
+
+  <div class="container screenshot"></div>
+
+  <div class="container">
+    <div class="text">
+      <h2>Sync backends</h2>
+      <ul>
+        <li>
+          <strong>Nextcloud Bookmarks</strong><br />Nextcloud is a self-hosted
+          sync and share solution which also offers a bookmarks app, which
+          allows you to access your bookmarks via a beatiful web UI and to sync
+          them with your browser via floccus.
+        </li>
+        <li>
+          <strong>WebDAV</strong><br />If you have a WebDAV file server at hand,
+          like any version of nextcloud/owncloud, box.com or with any other
+          WebDAV server, commercially or self-hosted, you can sync your
+          bookmarks using floccus.
+        </li>
+        <li>
+          <strong>Local file and more</strong><br />You can also simply sync
+          with a local file, using a companion desktop app, allowing you to sync
+          that file to other computers using your favorite file syncing
+          solution, like Dropbox, Syncthing, rsync, etc.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container bg-blue">
+    <div class="text footer">
+      <p>(c) Marcel Klehr</p>
+    </div>
+  </div>
+</html>
