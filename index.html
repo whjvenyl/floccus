@@ -18,6 +18,10 @@
       .container {
         color: #1a435c;
       }
+      a,
+      a:link,
+      a:visited,
+      a:active,
       h1,
       h2,
       h3 {
@@ -26,7 +30,8 @@
       .container > * {
         max-width: 800px;
         margin: auto;
-        padding: 15px;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
       }
       .header {
         box-sizing: border-box;
@@ -49,7 +54,7 @@
         min-height: 350px;
         font-size: 1.2em;
         background-repeat: no-repeat;
-        background-image: url('./img/undraw_devices.svg');
+        background-image: url('./img/undraw_in_sync.svg');
         background-size: 440px;
         background-position: -10px 20px;
       }
@@ -61,6 +66,14 @@
         background-position: center top;
         background-color: #235d81;
         box-shadow: #000 0 0 15px inset;
+      }
+      .donate {
+        box-sizing: border-box;
+        min-height: 350px;
+        background-repeat: no-repeat;
+        background-image: url('./img/undraw_love.svg');
+        background-size: 440px;
+        background-position: 250px 20px;
       }
       .footer {
       }
@@ -122,6 +135,40 @@
           with a local file, using a companion desktop app, allowing you to sync
           that file to other computers using your favorite file syncing
           solution, like Dropbox, Syncthing, rsync, etc.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container bg-blue">
+    <div class="text donate">
+      <h2>Donate</h2>
+      <ul>
+        <li>
+          <strong
+            ><a href="https://github.com/sponsors/marcelklehr"
+              >Github sponsors</a
+            ></strong
+          >
+        </li>
+        <li>
+          <strong
+            ><a href="https://liberapay.com/marcelklehr/donate"
+              >Liberapay</a
+            ></strong
+          >
+        </li>
+        <li>
+          <strong
+            ><a href="https://opencollective.com/floccus"
+              >OpenCollective</a
+            ></strong
+          >
+        </li>
+        <li>
+          <strong
+            ><a href="https://www.paypal.me/marcelklehr1">Paypal</a></strong
+          >
         </li>
       </ul>
     </div>
