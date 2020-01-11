@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://metricsgraphicsjs.org/dist/metricsgraphics.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: "Comfortaa", sans-serif;
@@ -200,6 +204,60 @@
         </p>
       </div>
     </div>
+
+    <div class="container">
+      <div class="text">
+        <h2>Benchmarks</h2>
+        <div class="graphs"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://metricsgraphicsjs.org/dist/metricsgraphics.min.js"></script>
+    <script>
+      d3.json(
+        "https://api.github.com/repos/marcelklehr/floccus/commits?order=asc&sort=created&per_page=100",
+        function(commits) {
+          d3.json(
+            "https://api.github.com/gists/51b4015641802f4f275574ca98beed61",
+            function(gist) {
+              const statsDb = JSON.parse(gist.files["index.json"].content);
+              const rawData = commits
+                .map(commit => ({
+                  sha: commit.sha,
+                  date: +new Date(commit.commit.committer.date) + '',
+                  data: statsDb[commit.sha]
+                }))
+                .filter(dot => !!dot.data);
+              console.log(rawData);
+
+              const labels = Object.keys(rawData[0].data);
+              console.log(labels);
+
+              const data = labels.map(label =>
+                rawData.map(dot => ({
+                  date: dot.date,
+                  value: dot.data[label].testSuiteTime
+                }))
+              );
+
+              MG.data_graphic({
+                title: "Test suite time (mins)",
+                data: data,
+                full_width: true,
+                height: 700,
+                right: 40,
+                legend: labels,
+                target: ".graphs",
+                x_accessor: "date",
+                y_accessor: "value"
+              });
+            }
+          );
+        }
+      );
+    </script>
 
     <div class="container bg-blue">
       <div class="text footer">
