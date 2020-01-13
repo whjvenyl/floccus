@@ -217,7 +217,7 @@
     <script src="https://metricsgraphicsjs.org/dist/metricsgraphics.min.js"></script>
     <script>
       d3.json(
-        "https://api.github.com/repos/marcelklehr/floccus/commits?order=asc&sort=created&per_page=100",
+        "https://api.github.com/repos/marcelklehr/floccus/commits?order=asc&sort=created&per_page=50",
         function(commits) {
           d3.json(
             "https://api.github.com/gists/51b4015641802f4f275574ca98beed61",
@@ -229,22 +229,27 @@
                   date: +new Date(commit.commit.committer.date) + '',
                   data: statsDb[commit.sha]
                 }))
-                .filter(dot => !!dot.data);
+                .filter(dot => !!dot.data)
               console.log(rawData);
 
-              const labels = Object.keys(rawData[0].data);
+              const labels = Object.keys(rawData[rawData.length-1].data);
               console.log(labels);
 
               const data = labels.map(label =>
                 rawData.map(dot => ({
                   date: dot.date,
-                  value: dot.data[label].testSuiteTime
+                  value: (dot.data && dot.data[label])? dot.data[label].testSuiteTime : null
                 }))
+               .filter(dot => !!dot.value)
               );
+
+              console.log(data)
 
               MG.data_graphic({
                 title: "Test suite time (mins)",
                 data: data,
+                missing_is_hidden: true,
+                interpolate: d3.curveLinear,
                 full_width: true,
                 height: 700,
                 right: 40,
