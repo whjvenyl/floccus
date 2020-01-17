@@ -475,7 +475,7 @@
                       .filter(dot => !!dot.data)
                     console.log(rawData);
 
-                    const labels = Object.keys(rawData[rawData.length-1].data);
+                    const labels = Object.keys(Object.assign({}, ...rawData.map(dot => dot.data)));
                     console.log(labels);
 
                     const colors = labels.map(l => hashStringToColor(l))
