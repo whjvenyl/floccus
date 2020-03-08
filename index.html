@@ -39,20 +39,21 @@
       .container > * {
         max-width: 800px;
         margin: auto;
-        padding-top: 30px !important;
-        padding-bottom: 30px !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
       }
       .header {
         box-sizing: border-box;
-        padding: 25px;
-        padding-left: 130px;
+        padding: 60px !important;
+        padding-left: 420px !important;
         background-repeat: no-repeat;
-        background-image: url("https://raw.githubusercontent.com/marcelklehr/floccus/develop/icons/logo_128.png");
+        background-image: url("https://raw.githubusercontent.com/marcelklehr/floccus/develop/icons/logo_64.png");
+        background-position: 345px 45px;
         color: #3893cc;
       }
-      .header h1,
-      .header p {
+      .header h1 {
         margin: 0;
+        font-size: 28px;
       }
       .text {
         padding: 10px 0;
@@ -64,8 +65,8 @@
         font-size: 1.2em;
         background-repeat: no-repeat;
         background-image: url("./img/undraw_in_sync.svg");
-        background-size: 440px;
-        background-position: -10px 20px;
+        background-size: 420px;
+        background-position: 0 41px;
       }
       .screenshot {
         min-height: 400px;
@@ -82,7 +83,16 @@
         background-repeat: no-repeat;
         background-image: url("./img/undraw_love.svg");
         background-size: 440px;
-        background-position: 250px 20px;
+        background-position: 270px 118px;
+        padding-right: 310px;
+      }
+      .backends {
+        background-repeat: no-repeat;
+        background-image: url("./img/undraw_devices.svg");
+        background-size: 440px;
+        background-position: 444px 214px;
+        padding-right: 351px;
+        box-sizing: border-box;
       }
       .benchmarks .legend span {
         display: block;
@@ -98,9 +108,6 @@
     <div class="container">
       <div class="header">
         <h1>floccus</h1>
-        <p>
-          Sync your bookmarks across browsers via a self-hosted server
-        </p>
       </div>
     </div>
     <div class="container bg-blue">
@@ -129,7 +136,7 @@
     <div class="container screenshot"></div>
 
     <div class="container">
-      <div class="text">
+      <div class="text backends">
         <h2>Sync backends</h2>
         <ul>
           <li>
@@ -146,7 +153,7 @@
           </li>
           <li>
             <strong>Local file and more</strong><br />You can also simply sync
-            with a local file, using a companion desktop app, allowing you to
+            with a local file, using a <a href="https://github.com/TCB13/LoFloccus#readme"companion desktop app</a>, allowing you to
             sync that file to other computers using your favorite file syncing
             solution, like Dropbox, Syncthing, rsync, etc.
           </li>
@@ -157,6 +164,9 @@
     <div class="container bg-blue">
       <div class="text donate">
         <h2>Donate</h2>
+        <p>
+          Fend for yourself and give something back to the creator of floccus to support the creation and maintenance of this project financially. Any amount, no matter how small, is appreciated. Thank you 💙
+        </p>
         <ul>
           <li>
             <strong
@@ -192,13 +202,15 @@
       <div class="text contribute">
         <h2>Contribute</h2>
         <p>
-          floccus is open source and available free as in free beer as well as
-          in free speech. You can apply your own skills to make it even better!
+          floccus is available free as in free beer as well as
+          in free speech: You can apply your own skills to make it even better!
         </p>
         <p>
-          Have a problem or an idea? File an issue! Want to take up some coding
-          for a new feature? Open a pull request! Your language is not yet
-          available? Translate it on transifex!
+          Have a problem or an idea? <a href="https://github.com/marcelklehr/floccus/issues/new/choose">File an issue!</a></p>
+        <p>
+          Want to take up some coding for a new feature? <a href="https://github.com/marcelklehr/floccus/#development">Open a pull request!</a>
+        <p>
+          Your language is not yet available? <a href="https://www.transifex.com/floccus/floccus/">Translate it on transifex!</a>
         </p>
         <p>
           Find out more on how to contribute on
@@ -210,6 +222,9 @@
     <div class="container">
       <div class="text benchmarks">
         <h2>Performance monitoring</h2>
+        <p>
+          These graphs measure the evolution of performance over the course of development. They show the last 50 commits to the source repository; the last data point does not necessarily correspond to the latest release. Lower is better. Changes in measured execution time may correspond to either an actual change of performance, a change in measurement methodology or a change in testing conditions. The first token in the descriptions is the backend used.
+        </p>
         <div class="test-graphs"></div>
         <div class="benchmark-default-graphs"></div>
         <div class="benchmark-parallel-graphs"></div>
