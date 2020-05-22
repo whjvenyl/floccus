@@ -44,12 +44,13 @@
       }
       .header {
         box-sizing: border-box;
-        padding: 60px !important;
-        padding-left: 420px !important;
+        margin: 60px auto;
+        padding-left: 85px !important;
         background-repeat: no-repeat;
         background-image: url("https://raw.githubusercontent.com/marcelklehr/floccus/develop/icons/logo_64.png");
-        background-position: 345px 45px;
+        background-position: 10px 45px;
         color: #3893cc;
+        width: 200px;
       }
       .header h1 {
         margin: 0;
@@ -75,7 +76,7 @@
         background-size: cover;
         background-position: right top;
         background-color: #235d81;
-        box-shadow: #000 0 0 15px inset;
+        box-shadow: #000000aa 0 0 15px inset;
       }
       .donate {
         box-sizing: border-box;
@@ -102,6 +103,17 @@
       .bg-blue {
         background-color: #eaf2f7;
       }
+      @media screen and (max-width: 800px) {
+        .text {
+          padding: 10px 30px;
+        }
+        .text.bg {
+          padding: 10px 30px;
+          padding-top: 70% !important;
+          background-size: 75%;
+          background-position: center 60px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -111,31 +123,37 @@
       </div>
     </div>
     <div class="container bg-blue">
-      <div class="text description bg-devices">
+      <div class="text description bg">
         <p>
-          Synchronize your bookmarks across browsers and
-          devices via a self-hosted server of your choosing. Full control, full
-          privacy, full access to your favorite experiences on the web.
+          Synchronize your bookmarks across browsers and devices via a
+          self-hosted server of your choosing. Full control, full privacy, full
+          access to your favorite experiences on the web.
         </p>
         <a href="https://addons.mozilla.org/en-US/firefox/addon/floccus/"
           ><img
-            src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_2.png"
+            src="https://img.shields.io/badge/Mozilla Firefox-addon-orange?style=for-the-badge&logo=firefox"
             alt="floccus on Mozilla addons"
-            style="height: 47px;"
+            style="height: 27px;"
         /></a>
         <a
           href="https://chrome.google.com/webstore/detail/floccus/fnaicdffflnofjppbagibeoednhnbjhg"
           ><img
-            src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_206x58.png"
+            src="https://img.shields.io/badge/Google Chrome-extension-green?style=for-the-badge&logo=chromium"
             alt="floccus on Chrome Webstore"
-            style="height: 56px;"
+            style="height: 27px;"
         /></a>
         <a
           href="https://microsoftedge.microsoft.com/addons/detail/gjkddcofhiifldbllobcamllmanombji"
           ><img
-            src="https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png"
-            alt="floccus on Chrome Webstore"
-            style="height: 47px;"
+            src="https://img.shields.io/badge/Microsoft Edge-Extension-blue?style=for-the-badge&logo=edge"
+            alt="floccus Microsoft Edge Addons"
+            style="height: 27px;"
+        /></a>
+        <a href="https://github.com/marcelklehr/floccus/releases"
+          ><img
+            alt="Latest GitHub release"
+            src="https://img.shields.io/github/v/release/marcelklehr/floccus?style=for-the-badge&label=Release&logo=github"
+            style="height: 27px;"
         /></a>
       </div>
     </div>
@@ -143,14 +161,18 @@
     <div class="container screenshot"></div>
 
     <div class="container">
-      <div class="text backends">
+      <div class="text backends bg">
         <h2>Sync backends</h2>
         <ul>
           <li>
-            <strong><a href="https://github.com/nextcloud/bookmarks#readme">Nextcloud Bookmarks</a></strong><br /><a href="https://nextcloud.com/">Nextcloud</a> is a self-hosted
-            sync and share solution which also offers a bookmarks app, which
-            allows you to access your bookmarks via a beatiful web UI and to
-            sync them with your browser via floccus.
+            <strong
+              ><a href="https://github.com/nextcloud/bookmarks#readme"
+                >Nextcloud Bookmarks</a
+              ></strong
+            ><br /><a href="https://nextcloud.com/">Nextcloud</a> is a
+            self-hosted sync and share solution which also offers a bookmarks
+            app, which allows you to access your bookmarks via a beatiful web UI
+            and to sync them with your browser via floccus.
           </li>
           <li>
             <strong>WebDAV</strong><br />If you have a WebDAV file server at
@@ -160,19 +182,23 @@
           </li>
           <li>
             <strong>Local file and more</strong><br />You can also simply sync
-            with a local file, using a <a href="https://github.com/TCB13/LoFloccus#readme">companion desktop app</a>, allowing you to
-            sync that file to other computers using your favorite file syncing
-            solution, like Dropbox, Syncthing, rsync, etc.
+            with a local file, using a
+            <a href="https://github.com/TCB13/LoFloccus#readme"
+              >companion desktop app</a
+            >, allowing you to sync that file to other computers using your
+            favorite file syncing solution, like Dropbox, Syncthing, rsync, etc.
           </li>
         </ul>
       </div>
     </div>
 
     <div class="container bg-blue">
-      <div class="text donate">
+      <div class="text donate bg">
         <h2>Donate</h2>
         <p>
-          Fend for yourself and give something back to the creator of floccus to support the creation and maintenance of this project financially. Any amount, no matter how small, is appreciated. Thank you 💙
+          Fend for yourself and give something back to the creator of floccus to
+          support the creation and maintenance of this project financially. Any
+          amount, no matter how small, is appreciated. Thank you 💙
         </p>
         <ul>
           <li>
@@ -209,15 +235,27 @@
       <div class="text contribute">
         <h2>Contribute</h2>
         <p>
-          floccus is available free as in free beer as well as
-          in free speech: You can apply your own skills to make it even better!
+          floccus is available free as in free beer as well as in free speech:
+          You can apply your own skills to make it even better!
         </p>
         <p>
-          Have a problem or an idea? <a href="https://github.com/marcelklehr/floccus/issues/new/choose">File an issue!</a></p>
+          Have a problem or an idea?
+          <a href="https://github.com/marcelklehr/floccus/issues/new/choose"
+            >File an issue!</a
+          >
+        </p>
         <p>
-          Want to take up some coding for a new feature? <a href="https://github.com/marcelklehr/floccus/#development">Open a pull request!</a>
+          Want to take up some coding for a new feature?
+          <a href="https://github.com/marcelklehr/floccus/#development"
+            >Open a pull request!</a
+          >
+        </p>
+
         <p>
-          Your language is not yet available? <a href="https://www.transifex.com/floccus/floccus/">Translate it on transifex!</a>
+          Your language is not yet available?
+          <a href="https://www.transifex.com/floccus/floccus/"
+            >Translate it on transifex!</a
+          >
         </p>
         <p>
           Find out more on how to contribute on
@@ -230,7 +268,13 @@
       <div class="text benchmarks">
         <h2>Performance monitoring</h2>
         <p>
-          These graphs measure the evolution of performance over the course of development. They show the last 50 commits to the source repository; the last data point does not necessarily correspond to the latest release. Lower is better. Changes in measured execution time may correspond to either an actual change of performance, a change in measurement methodology or a change in testing conditions. The first token in the descriptions is the backend used.
+          These graphs measure the evolution of performance over the course of
+          development. They show the last 50 commits to the source repository;
+          the last data point does not necessarily correspond to the latest
+          release. Lower is better. Changes in measured execution time may
+          correspond to either an actual change of performance, a change in
+          measurement methodology or a change in testing conditions. The first
+          token in the descriptions is the backend used.
         </p>
         <div class="test-graphs"></div>
         <div class="benchmark-default-graphs"></div>
@@ -400,7 +444,7 @@
         return hash;
       }
 
-      const COLORLIST = Object.values(COLORS)
+      const COLORLIST = Object.values(COLORS);
 
       function hashStringToColor(str) {
         var h = hash(str);
@@ -421,7 +465,9 @@
                   data: statsDb[commit.sha]
                 }))
                 .filter(dot => !!dot.data)
-                .map((dot, i) => Object.assign({}, dot, {date: commits.length-i}));
+                .map((dot, i) =>
+                  Object.assign({}, dot, { date: commits.length - i })
+                );
               console.log(rawData);
 
               const all_labels = Object.keys(
